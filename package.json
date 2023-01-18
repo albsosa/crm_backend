@@ -1,0 +1,63 @@
+{
+  "name": "roddo_backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon src/bin/www --exec babel-node",
+    "serve": "node dist/bin/www",
+    "build": "rimraf dist/ && babel src --out-dir dist --source-maps --verbose --copy-files",
+    "clean": "rimraf dist/",
+    "test": "jest --watch",
+    "standard": "node_modules/.bin/standard src/**/*.js",
+    "unit-test": "mocha src/test/unit-tests/*.test.js --timeout 15000 --require @babel/register"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-validator": "^6.14.2",
+    "jsonwebtoken": "^9.0.0",
+    "moment": "^2.29.4",
+    "mongoose": "^6.8.2",
+    "mongose": "0.0.2-security",
+    "morgan": "^1.10.0",
+    "promise-mysql": "^5.2.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.10.3",
+    "@babel/core": "^7.10.3",
+    "@babel/node": "^7.10.3",
+    "@babel/plugin-transform-runtime": "^7.10.3",
+    "@babel/preset-env": "^7.10.3",
+    "@babel/runtime": "^7.10.3",
+    "babel-jest": "^26.1.0",
+    "chai": "^4.3.4",
+    "chai-http": "^4.3.0",
+    "jest": "^26.1.0",
+    "mocha": "^9.1.3",
+    "nodemon": "^2.0.4",
+    "regenerator-runtime": "^0.13.5",
+    "standard": "^14.3.4",
+    "supertest": "^4.0.2"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ],
+    "plugins": [
+      "@babel/plugin-transform-runtime"
+    ],
+    "sourceMaps": "inline",
+    "retainLines": true
+  },
+  "standard": {
+    "env": [
+      "jest"
+    ]
+  }
+}
